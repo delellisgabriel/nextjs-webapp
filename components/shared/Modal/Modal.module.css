@@ -1,0 +1,28 @@
+.modalPosition {
+  position: relative;
+  z-index: 50;
+}
+
+.modalWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalPanel {
+  max-width: 512px;
+  width: 100%;
+  background: whitesmoke;
+  color: black;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}

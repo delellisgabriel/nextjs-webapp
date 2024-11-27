@@ -1,5 +1,6 @@
 import type { ReactNode, FC } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import styles from "./Modal.module.css";
 
 export type ModalProps = {
   isOpen: boolean;
@@ -16,21 +17,11 @@ const Modal: FC<ModalProps> = ({
     <Dialog
       open={isOpen}
       onClose={() => closeModal()}
-      style={{
-        position: "relative",
-        zIndex: "50",
-      }}
+      className={styles.modalPosition}
     >
-      <div
-        style={{
-          position: "fixed",
-          inset: "0px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <DialogPanel>{children}</DialogPanel>
+      <DialogBackdrop className={styles.backdrop} />
+      <div className={styles.modalWrapper}>
+        <DialogPanel className={styles.modalPanel}>{children}</DialogPanel>
       </div>
     </Dialog>
   );
